@@ -4,11 +4,26 @@ defmodule TypedEnum.MixProject do
   def project do
     [
       app: :typed_enum,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
-      deps: deps()
+      deps: deps(),
+      source_url: "https://github.com/mnussbaumer/typed_enum",
+      homepage_url: "https://hexdocs.pm/typed_enum/readme.html",
+      docs: [
+        main: "TypedEnum",
+        extras: ["README.md"]
+      ],
+      description:
+        "Macro to easily generate independent Enum Ecto.Types with support for integer and string as the underlying representation and atoms for the app logic.",
+      package: [
+        exclude_patterns: [~r/.*~$/, ~r/#.*#$/],
+        licenses: ["MIT"],
+        links: %{
+          "github/readme" => "https://github.com/mnussbuamer/typed_enum"
+        }
+      ]
     ]
   end
 
@@ -20,5 +35,8 @@ defmodule TypedEnum.MixProject do
     do: [extra_applications: [:logger]]
 
   defp deps(),
-    do: [{:ecto, "~> 3.7"}]
+    do: [
+      {:ecto, "~> 3.7"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
 end
