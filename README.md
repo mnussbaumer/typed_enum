@@ -10,7 +10,7 @@ Add `typed_enum` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:typed_enum, "~> 0.1.0"}
+    {:typed_enum, "~> 0.1"}
   ]
 end
 ```
@@ -27,7 +27,7 @@ Docs: [https://hexdocs.pm/typed_enum](https://hexdocs.pm/typed_enum).
 
 ### Why ?
 
-Although Ecto ships (since 3.5) with an Enum type that allows you to easily use limit the possible values a field can have while providing casting between `"strings"` to their `:atoms` representations there are still some issues that you might run into:
+Although Ecto ships (since 3.5) with an Enum type that allows you to easily limit the possible values a field can have while providing casting between `"strings"` to their `:atoms` representations there are still some issues that you might run into:
 
 - If you need to share the type between schemas then you need to duplicate or keep the the declarations in multiple schemas somehow in synch
 - You can't define enums with integers as their database layer representation
@@ -59,7 +59,7 @@ defmodule SomeSchema do
 end
 ```
 
-This means you can share it between schemas and not worry about it keeping it in synch.
+This means you can share it between schemas and not worry about keeping it in synch.
 If you want to use integers as its underlying representation then declare it as:
 
 
@@ -92,7 +92,7 @@ This would allow you to convert params/values in certain formats even if you don
 
 ## About
 
-![Cocktail Logo](https://github.com/mnussbaumer/cssex/blob/master/logo/cocktail_logo.png?raw=true "Cocktail Logo")
+<img src="https://github.com/mnussbaumer/typed_enum/blob/master/logo/cocktail_logo.png?raw=true" alt="Cocktail Logo" style="background-color: rgba(255, 255, 255, 0.5)">
 
 [© rooster image in the cocktail logo](https://commons.wikimedia.org/wiki/User:LadyofHats)
 
